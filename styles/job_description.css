@@ -1,0 +1,32 @@
+.header{
+    background-color: black;
+}
+.panel-bg{
+    background:-webkit-linear-gradient(bottom, #323333, #6099c9);
+    margin-top: -1px;
+    color: rgb(255, 255, 255);
+}
+.panel-bg a{
+    color: #d1cdcd
+}
+.row{
+    margin-top: 18px;
+}
+.main-content{
+    background: -webkit-linear-gradient(top, #323333, #71abdb);
+    margin-top: 3%;
+    padding: 3%;
+    margin-top: -5px;
+}
+footer a:hover{
+    color:rgb(255, 255, 255);
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
