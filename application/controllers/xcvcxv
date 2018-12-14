@@ -1,0 +1,44 @@
+$config = array(
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://www.gmail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'wakram999@gmail.com',
+                'smtp_pass' => 'ashiqkuttan',
+                'mailtype'  => 'html',
+                'charset'   => 'utf-8'
+            );
+        $this->load->library('email',$config);
+
+        $this->email->initialize($config);
+
+        $this->email->set_mailtype("html");
+        $this->email->set_newline("\r\n");
+
+        
+        $subject="Welcome to MySite!";	//subject
+        $message= /*-----------email body starts-----------*/
+        'Thanks for signing up, '.$_POST['first_name'].$_POST['last_name'].'!
+      
+        Your account has been created. 
+        Here are your login details.
+        -------------------------------------------------
+        Email   : ' . $_POST['email'] . '
+        Password: ' . $_POST['password'] . '
+        -------------------------------------------------
+                        
+        Please click this link to activate your account:
+            
+        ' . base_url() . 'index.php/user_registration/verify?' .
+        'email=' . $_POST['email'] . '&hash=' . $hash ;
+        /*-----------email body ends-----------*/
+        
+        $address = $_POST['email'];	//receiver's email
+        $this->email->from('admin@jobber.com', 'Jobber'); //sender's email
+        $this->email->to($address);
+        $this->email->subject($subject);
+        $this->email->message($message);
+        if ($this->email->send()) {
+            echo 'Activation code sent to email';
+        } else {
+            echo $this->email->print_debugger();
+        }
