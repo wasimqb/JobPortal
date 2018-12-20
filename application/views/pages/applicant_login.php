@@ -58,10 +58,10 @@
                                         value="" />
                                 </div>
                                 <div class="social-button">
-                                    <a href="" class="btn btn-md btn-primary">
+                                    <a href="facebook_login" name="" class="btn btn-md btn-primary">
                                         <i class="fa fa-facebook fa-fw"></i> Sign in with Facebook
                                     </a>
-                                    <a href="" class="btn btn-md btn-danger">
+                                    <a href="google_login" class="btn btn-md btn-danger">
                                         <i class="fa fa-google fa-fw"></i> Sign in with Google
                                     </a>
                                 </div>

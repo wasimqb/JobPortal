@@ -59,65 +59,41 @@
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Software Engineer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="job_decription.html" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Developer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">DevOps Engineer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Software Engineer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Developer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">DevOps Engineer</h5>
-                            <p class="card-text">Employer: NISSAN</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row"></div>
+            
+                
+                            <?php
+                            // print_r($jobs);
+                            $j=0;
+                            for ($i=0; $i<=count($jobs)/3; $i++)
+                            {
+                                echo '<div class="row">';
+                            
+                            while($j<count($jobs))
+                            {
+                            echo '
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">'.$jobs[$j]['title'].'</h5>
+                                            <p class="card-text">Employer : '.$jobs[$j]['name'].'</p>
+                                            <a href="job_decription.html" class="btn btn-primary">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>';
+                                $j++;
+                                if($j%3==0) {
+                                    break;
+                                }
+                            }
+                        echo '</div>'; 
+                        } // 
+                                // echo $jobs[0]['title'];
+                                // echo "<br>".$userData->name;
+                            ?>
+                            
+                            
+            
+            
         </div>
     </div>
     <footer class="page-footer font-small panel-bg pt-4">

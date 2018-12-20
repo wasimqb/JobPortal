@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo $title; ?></title>
+    <title>Add Job</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/add_job.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>styles/add_job.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -25,10 +25,11 @@
     <div class="container-fluid main-content">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <form method="POST" class="col-md-7 formcss" action="addForm.php">
+                <form method="POST" class="col-md-7 formcss" action="add_job">
                     <div class="card col-md-12">
                         <div class="card-header text-center">
                             <h4><strong>Add Job</strong></h4>
+                            <?php echo @$error; ?>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="title" placeholder="Job Title *" value="" />
@@ -41,15 +42,14 @@
                                 name="role"></textarea>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="4" id="education" placeholder="Describe the education qualifications required for the job here... *"
-                                name="education"></textarea>
+                            <input type="text" class="form-control" name="edu_qualification" placeholder="Educational Qualification *" value="" />
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="experience" placeholder="Experience *" value="" />
                         </div>
                         <div class="buttons col-md-8">
                             <a href="home_employer.html" class="btn btn-primary col-md-4">Cancel</a>
-                            <input type="submit" class="btn btn-primary col-md-4" value="Add" />
+                            <input type="submit" name="addJob" class="btn btn-primary col-md-4" value="Add" />
                         </div>
                     </div>
                 </form>
