@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="add_job.html" class="btn btn-info btn-lg pull-right">
+                    <a href="add_job" class="btn btn-info btn-lg pull-right">
                         <i class="fa fa-plus-circle"></i> Add Job
                     </a>
                 </div>
@@ -46,7 +46,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">'.$jobs[$j]['title'].'</h5>
                                             <p class="card-text">Experience : '.$jobs[$j]['experience'].'</p>
-                                            <a href="job_decription.html" class="btn btn-primary">View Details</a>
+                                            <a href="job_description_employer/'.$jobs[$j]['job_id'].'" class="btn btn-primary">View Details</a>
                                         </div>
                                     </div>
                                 </div>';

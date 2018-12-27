@@ -6,7 +6,7 @@
     <title>Your Jobs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/view_profile_jobs.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>styles/view_profile_jobs.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -42,35 +42,32 @@
                             <h5 class="card-title">Applied Jobs</h5>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                            <?php
+                            $j=0;
+                            for ($i=0; $i<=count($applied_jobs)/3; $i++)
+                            {
+                                echo '<div class="row">';
+                            
+                            while($j<count($applied_jobs))
+                            {
+                            echo '
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Software Engineer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
+                                            <h5 class="card-title">'.$applied_jobs[$j]['title'].'</h5>
+                                            <p class="card-text">Employer : '.$applied_jobs[$j]['name'].'</p>
+                                            <a href="view_job/'.$applied_jobs[$j]['job_id'].'" class="btn btn-primary">View Details</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Web Developer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">DevOps Engineer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>';
+                                $j++;
+                                if($j%3==0) {
+                                    break;
+                                }
+                            }
+                        echo '</div>'; 
+                        }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -80,40 +77,38 @@
                             <h5 class="card-title">Jobs Saved for Later</h5>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                        <?php
+                            $j=0;
+                            for ($i=0; $i<=count($saved_jobs)/3; $i++)
+                            {
+                                echo '<div class="row">';
+                            
+                            while($j<count($saved_jobs))
+                            {
+                            echo '
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Software Engineer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
+                                            <h5 class="card-title">'.$saved_jobs[$j]['title'].'</h5>
+                                            <p class="card-text">Employer : '.$saved_jobs[$j]['name'].'</p>
+                                            <a href="view_job/'.$saved_jobs[$j]['job_id'].'" class="btn btn-primary">View Details</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Web Developer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">DevOps Engineer</h5>
-                                            <p class="card-text">Employer: NISSAN</p>
-                                            <a href="#" class="btn btn-primary">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>';
+                                $j++;
+                                if($j%3==0) {
+                                    break;
+                                }
+                            }
+                        echo '</div>'; 
+                        }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
     <footer class="page-footer font-small panel-bg pt-4">
         <div class="container-fluid text-center text-md-left">

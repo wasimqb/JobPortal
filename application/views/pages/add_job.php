@@ -48,7 +48,7 @@
                             <input type="text" class="form-control" name="experience" placeholder="Experience *" value="" />
                         </div>
                         <div class="buttons col-md-8">
-                            <a href="home_employer.html" class="btn btn-primary col-md-4">Cancel</a>
+                            <a href="employer_home" class="btn btn-primary col-md-4">Cancel</a>
                             <input type="submit" name="addJob" class="btn btn-primary col-md-4" value="Add" />
                         </div>
                     </div>

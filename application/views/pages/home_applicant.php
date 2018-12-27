@@ -25,11 +25,11 @@
                     Profile
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="view_profile_jobs.html">Applied Jobs</a>
-                    <a class="dropdown-item" href="view_profile_jobs.html">Saved for Later</a>
-                    <a class="dropdown-item" href="profile_edit.html">Upload/Change Resume</a>
-                    <a class="dropdown-item" href="profile_edit.html">Edit Profile</a>
-                    <a class="dropdown-item" href="">Sign Out</a>
+                    <a class="dropdown-item" href="view_profile_jobs">Applied Jobs</a>
+                    <a class="dropdown-item" href="view_profile_jobs">Saved for Later</a>
+                    <a class="dropdown-item" href="profile_edit">Upload/Change Resume</a>
+                    <a class="dropdown-item" href="profile_edit">Edit Profile</a>
+                    <a class="dropdown-item" href="sign_out">Sign Out</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <form class="card card-sm" method="POST">
+                    <form class="card card-sm" method="POST" action="search">
                         <div class="card-body row no-gutters align-items-center">
                             <div class="col-md-8">
                                 <input class="form-control form-control-lg form-control-borderless" type="search" name="search"
@@ -53,14 +53,14 @@
                                 </select>
                             </div>&nbsp;&nbsp;&nbsp;
                             <div class="col-md-1">
-                                <button class="btn btn-lg btn-primary" type="submit">Search</button>
+                                <input class="btn btn-lg btn-primary" type="submit" name='submit' value="Search">
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
             
-                
+                <?php echo $error; ?>
                             <?php
                             // print_r($jobs);
                             $j=0;
@@ -76,7 +76,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">'.$jobs[$j]['title'].'</h5>
                                             <p class="card-text">Employer : '.$jobs[$j]['name'].'</p>
-                                            <a href="job_decription.html" class="btn btn-primary">View Details</a>
+                                            <a href="view_job/'.$jobs[$j]['job_id'].'" class="btn btn-primary">View Details</a>
                                         </div>
                                     </div>
                                 </div>';
@@ -86,9 +86,7 @@
                                 }
                             }
                         echo '</div>'; 
-                        } // 
-                                // echo $jobs[0]['title'];
-                                // echo "<br>".$userData->name;
+                        }
                             ?>
                             
                             

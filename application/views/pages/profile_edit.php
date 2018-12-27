@@ -25,18 +25,13 @@
                     Profile
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="profile_edit.html">Upload/Change Resume</a>
+                    <a class="dropdown-item" href="profile_edit">Upload/Change Resume</a>
                     <a class="dropdown-item" href="#">Applied Jobs</a>
                     <a class="dropdown-item" href="#">Saved for Later</a>
-                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="profile_edit">Edit Profile</a>
                     <a class="dropdown-item" href="#">Sign Out</a>
                 </div>
             </div>
-
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button> -->
         </div>
     </div>
     <div class="container-fluid main-content">
@@ -46,19 +41,21 @@
                     <div class="card-header text-center">
                         <h5 class="card-title">Resume Preview</h5>
                     </div>
-                    <embed src="files/resume.pdf" class="col-md-12" height="622px" type='application/pdf' />
+                    <embed src="/var/www/JobPortal/files/consolidated_marklist.pdf" class="col-md-12" height="430px" type='application/pdf' />
                     <div class="card-body">
-                    <form method="POST" action="upload_resume">
+                    </object>
+                    <form method="POST" action="resume_upload" enctype="multipart/form-data">
                         <h5 class="card-title">Upload/Change Resume</h5>
+                        <p style="color:red"><small><?php echo $error_resume;?></small></p>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                             </div>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <input type="file" name="resume" class="custom-file-input">
                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>&nbsp;
-                            <a href="#" class="btn btn-primary">Submit</a>
+                            <input name="upload" type="submit" class="btn btn-primary" value="Upload/Change">
                         </div>
                     </form>
                     </div>
@@ -70,6 +67,7 @@
                         <h5 class="card-title">Edit Profile</h5>
                     </div>
                     <div class="card-body">
+                    <?php echo $error;?>
                         <form method="POST" action="update_profile">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="first_name" placeholder="<?php echo $applicant[0]['firstname'];?>"

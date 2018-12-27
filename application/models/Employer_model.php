@@ -20,7 +20,7 @@ class Employer_model extends CI_Model
         $this->db->where('email',$email);
         $query = $this->db->get('employer');
         $result = $query->result_array();
-        $this->employer_id = $result[0]['id'];
+        $this->employer_id = $result[0]['employer_id'];
 
         $this->db->insert('job',$this);
     }
@@ -31,10 +31,28 @@ class Employer_model extends CI_Model
         $this->db->where('email',$email);
         $query = $this->db->get('employer');
         $result = $query->result_array();
-        $id = $result[0]['id'];
+        $id = $result[0]['employer_id'];
 
         $this->db->where('employer_id',$id);
         $query = $this->db->get('job');
+        $result = $query->result_array();
+        return $result;
+    }
+
+    public function job_description_employer($id)
+    {
+        $job_id = $id;
+        $this->db->where('job_id',$job_id);
+        $query = $this->db->get('job');
+        $result = $query->result_array();
+        return $result;
+    }
+
+    public function applicant_details($id)
+    {
+        $job_id = $id;
+        $query = $this->db->query("select * from applicant join address on applicant.applicant_id = address.applicant_id
+                        where applicant.applicant_id IN (select applicant_id from applied_jobs where job_id=".$job_id.")");
         $result = $query->result_array();
         return $result;
     }

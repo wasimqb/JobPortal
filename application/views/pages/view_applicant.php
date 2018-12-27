@@ -7,7 +7,7 @@
     <title>View Applicant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/view_applicant.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>styles/view_applicant.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="class-footer">
-                        <a href="" class="btn btn-primary pull-right">Go Back</a>
+                        <a href="/index.php/employer/job_description_employer" class="btn btn-primary pull-right">Go Back</a>
                     </div>
                 </div>
             </div>

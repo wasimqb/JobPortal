@@ -51,7 +51,7 @@ class Register extends CI_Controller
                         'state'=> $state,
                         'country'=> $country,
                         'pincode'=> $pincode,
-                        'applicant_id'=> $data[0]['id']
+                        'applicant_id'=> $data[0]['applicant_id']
                 );
                 $this->db->insert('address', $address);
                 $this->send_confirmation($hash);

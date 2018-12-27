@@ -128,22 +128,4 @@ class Login extends CI_Controller
     {
         redirect('index.php/register/employer_registration');
     }
-
-    // public function facebook_login()
-    // {
-    //     $this->load->library('Facebook', array('appId' => '2112236655489845', 'secret' => 'f00c2dd76b6a39095c720c5e7641a857'));
-    //     // Get user's login information
-    //     $this->user = $this->facebook->getUser();
-    //     if ($this->user) {
-    //         $data['user_profile'] = $this->facebook->api('/me/');
-    //         // Get logout url of facebook
-    //         // $data['logout_url'] = $this->facebook->getLogoutUrl(array('next' => base_url() . 'index.php/oauth_login/logout'));
-    //         // Send data to profile page
-    //         $this->load->view('pages/home_applicant', $data);
-    //     } else {
-    //         // Store users facebook login url
-    //         $data['login_url'] = $this->facebook->getLoginUrl();
-    //         $this->load->view('pages/home_applicant', $data);
-    //     }
-    // }
 }
